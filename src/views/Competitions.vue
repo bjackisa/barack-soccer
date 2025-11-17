@@ -133,20 +133,8 @@ export default {
       this.loading = true;
       this.error = null;
 
-      const apiKey = import.meta.env.VITE_API_KEY;
-
-      if (!apiKey || apiKey === 'YOUR_API_KEY_HERE') {
-        this.error = 'API key is missing. Please add it to your .env file.';
-        this.loading = false;
-        return;
-      }
-
       try {
-        const response = await axios.get('/api/v4/competitions', {
-          headers: {
-            'X-Auth-Token': apiKey
-          }
-        });
+        const response = await axios.get('https://api.football-data.org/v4/competitions');
 
         this.competitions = response.data.competitions || [];
         this.loadMoreItems();
