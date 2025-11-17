@@ -142,7 +142,7 @@ export default {
       }
 
       try {
-        const response = await axios.get('https://api.football-data.org/v4/competitions', {
+        const response = await axios.get('/api/v4/competitions', {
           headers: {
             'X-Auth-Token': apiKey
           }
