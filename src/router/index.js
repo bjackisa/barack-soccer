@@ -10,7 +10,7 @@ const routes = [
     {
         path: '/competitions',
         name: 'Competitions',
-        Component: Competitions
+        component: Competitions
     }
 ]
 
